@@ -8,6 +8,7 @@ curl -sSO https://raw.githubusercontent.com/xx66789/bt-7.7.0/main/install/instal
 
 如果我们的VPS配置较低，致使每日0点CPU占用非常高，造成服务器系统卡顿，那么我们只需要编辑“/www/server/panel/”目录下的task.py这个文件，并找到下面这段代码：
 
+```Bash
 def siteEdate():
     global oldEdate
     try:
@@ -16,6 +17,7 @@ def siteEdate():
        if not oldEdate:
            oldEdate = '0000-00-00'
        mEdate = time.strftime('%Y-%m-%d', time.localtime())
+```
 然后将“if not oldEdate:”这行代码删除，保存后重启Nginx服务即可解决。
 
 （3）绕过宝塔面板登录时强制绑定账号的方法
