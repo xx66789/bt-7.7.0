@@ -42,7 +42,7 @@ cp /www/server/panel/data/binds.pl /www/server/panel/data/bind.pl
 
 1）手动解锁宝塔所有付费插件为永不过期
 
-在“/www/server/panel/data/”文件夹中，找到文件plugin.json，并将字符串：”endtime”: -1全部替换为”endtime”: 999999999999，即可完成解锁。
+在“/www/server/panel/data/”文件夹中，找到文件plugin.json，并将字符串："endtime": -1全部替换为"endtime": 999999999999，即可完成解锁。
 
 2）给plugin.json文件上锁防止自动修复为免费版
 ```Bash
