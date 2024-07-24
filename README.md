@@ -25,14 +25,17 @@ def siteEdate():
 这时候，我们只需要执行以下命令，直接删除强制绑定宝塔账号的文件，即可绕过宝塔面板登录时强制绑定账号的限制，此方法仅适用于宝塔面板7.7.0及以下版本。具体命令如下：
 
 1）先备份强制绑定宝塔账号的文件，防止出错后恢复。
-
+```Bash
 cp /www/server/panel/data/bind.pl /www/server/panel/data/binds.pl
+```
 2）执行删除强制绑定宝塔账号的文件
-
+```Bash
 rm -f /www/server/panel/data/bind.pl
+```
 3）如果您删除上述文件后，发生错误，那么您还可以通过以下命令恢复此文件；否则，请忽略此项。
-
+```Bash
 cp /www/server/panel/data/binds.pl /www/server/panel/data/bind.pl
+```
 现在，你按“Ctrl+F5”强制刷新一下，是不是强制登录窗口又消失了？OK。
 
 （4）解锁宝塔面板所有付费插件并防止自动修复
@@ -42,6 +45,7 @@ cp /www/server/panel/data/binds.pl /www/server/panel/data/bind.pl
 在“/www/server/panel/data/”文件夹中，找到文件plugin.json，并将字符串：”endtime”: -1全部替换为”endtime”: 999999999999，即可完成解锁。
 
 2）给plugin.json文件上锁防止自动修复为免费版
-
+```Bash
 chattr +i /www/server/panel/data/plugin.json
+```
 修改plugin.json文件内容后，执行以上命令可防止修改过的文件被宝塔面板篡改。
